@@ -21,11 +21,15 @@ Thumbs.db
 *.dll
 *.exe
 *.class
+
+# Ignore log files and temp files
 *.log
 *.tmp
 *.swp
+*.swo
+*.swn
 
-# Ignore other unwanted files and directories
+# Ignore archive files
 *.zip
 *.tar
 *.rar
@@ -34,21 +38,18 @@ Thumbs.db
 *.bzip2
 *.xz
 
-# Ignore specific application files and directories
-*.bak
-*.swp
-*.swo
-*.swn
-*.tmp
-*.log
-*.pid
-*.seed
-*.pid.lock
-
 # Ignore project build directories and files
 dist/
 build/
 coverage/
 
-# Ignore Mac specific files
-*.DS_Store
+# Ignore application-specific files
+*.bak
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore any other unwanted files or directories
+*.tmp
+*.log
+
