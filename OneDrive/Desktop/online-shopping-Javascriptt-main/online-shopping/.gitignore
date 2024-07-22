@@ -11,7 +11,6 @@ Thumbs.db
 *.suo
 *.user
 *.userosscache
-*.suo
 *.ntvs_analysis.dat
 *.ncb
 *.sdf
@@ -25,3 +24,31 @@ Thumbs.db
 *.log
 *.tmp
 *.swp
+
+# Ignore other unwanted files and directories
+*.zip
+*.tar
+*.rar
+*.7z
+*.gzip
+*.bzip2
+*.xz
+
+# Ignore specific application files and directories
+*.bak
+*.swp
+*.swo
+*.swn
+*.tmp
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Ignore project build directories and files
+dist/
+build/
+coverage/
+
+# Ignore Mac specific files
+*.DS_Store
