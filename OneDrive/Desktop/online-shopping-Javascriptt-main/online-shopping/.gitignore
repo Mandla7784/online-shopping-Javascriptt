@@ -22,3 +22,171 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Ignore all files in the parent directory
+/*
+# Except the directory you are working in
+!/**/
+!/.gitignore
+!/.git/
+
+# New exclusions
+/.bash_history
+/.codeium/
+/.config/
+/console-ninja/
+/.gitconfig
+/.lesshst
+/.node_repl_history
+/.quokka/
+/.th-client/
+/.vscode/
+/API/
+/AppData/
+/CalculatorApp_Hope_Mandla/
+/Contacts/
+/Downloads/
+/Favorites/
+/HOPKER554_FTO2401_A2_Hope-Kerengera_DJS03/
+/IntelGraphicsProfiles/
+/Links/
+/MANDYO-434-GroupB-Mandla-Dyonase-_DJS08-main-1/
+/MANDYO-434-GroupB-Mandla-Dyonase-_DJS08-main-2/
+/MANDYO-434-GroupB-Mandla-Dyonase-_DJS08-main-3/
+/MANDYO-434-GroupB-Mandla-Dyonase-_DJS08-main/
+/MANDYO343_WFC2401_Group_b_Mandla-Dyonase_DJS03-main-1/
+/MANDYO343_WFC2401_Group_b_Mandla-Dyonase_DJS03-main-2/
+/MANDYO343_WFC2401_Group_b_Mandla-Dyonase_DJS03-main-3/
+/MANDYO343_WFC2401_Group_b_Mandla-Dyonase_DJS03-main/
+/MANDYO434-wfc2401_GroupB_Mandla-Dyonase_DJS10-main/
+/MANDYO434_WFC2401_GroupB_MandlDyonase_DJS09-main-1/
+/MANDYO434_WFC2401_GroupB_MandlDyonase_DJS09-main-2/
+/MANDYO434_WFC2401_GroupB_MandlDyonase_DJS09-main-3/
+/MANDYO434_WFC2401_GroupB_MandlDyonase_DJS09-main/
+/MANDYO434_WFC_Group_B-MandlaDyonase_DJS02-main-1/
+/MANDYO434_WFC_Group_B-MandlaDyonase_DJS02-main-2/
+/MANDYO434_WFC_Group_B-MandlaDyonase_DJS02-main-3/
+/MANDYO434_WFC_Group_B-MandlaDyonase_DJS02-main/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS07-main-1/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS07-main-2/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS07-main-3/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS07-main/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-1/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-2/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-3/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-4/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-5/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-6/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-7/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main-8/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main/
+/MANDYO434_wfc2401_GroupB_MandlaDyonase_CDV05_Portifolio-1/
+/MANDYO434_wfc2401_GroupB_MandlaDyonase_CDV05_Portifolio/
+/MANDYO434_wfc2401_GroupB_MandlaDyonase_SDF06_CSS_Layout_Practice_Project06/
+/MANDYO434_wfc2401_GroupB_MandlaDyonase_SDF08_Portifolio_project08-main/
+/MANDYO434_wfc2401_Group_B-_Mandla-Dyonase_DJS04-main-1/
+/MANDYO434_wfc2401_Group_B-_Mandla-Dyonase_DJS04-main-2/
+/MANDYO434_wfc2401_Group_B-_Mandla-Dyonase_DJS04-main/
+/MANDYO434_wfc2401_Group_B_Mandla_Dyonase_JSL05-main/
+/MANDYO434_wfc_2401_GroupB_Mandla-Dyonase_DJS05-main-1/
+/MANDYO434_wfc_2401_GroupB_Mandla-Dyonase_DJS05-main/
+/MANDYO434_wfc_2401_GroupB_Mandla-Dyonase_DJS06-main/
+/MANDYO434_wfc_Group_B-Mandla_Dyonase_DJS01-main-1/
+/MANDYO434_wfc_Group_B-Mandla-Dyonase_DJS01-main-2/
+/MANDYO434_wfc_Group_B-Mandla-Dyonase_DJS01-main-3/
+/MANDYO434_wfc_Group_B-Mandla-Dyonase_DJS01-main-4/
+/MANDYO434_wfc_Group_B-Mandla-Dyonase_DJS01-main-5/
+/MANDYO434_wfc_Group_B-Mandla-Dyonase_DJS01-main/
+/MANDYO_wfc-2401_Group_B_Mandla-Dyonase_DJS08-main-1/
+/MANDYO_wfc-2401_Group_B_Mandla-Dyonase_DJS08-main-2/
+/MANDYO_wfc-2401_Group_B_Mandla-Dyonase_DJS08-main-3/
+/MANDYO_wfc-2401_Group_B_Mandla-Dyonase_DJS08-main-4/
+/MANDYO_wfc-2401_Group_B_Mandla-Dyonase_DJS08-main/
+/Mobile/
+/Music/
+/NTUSER.DAT
+/NTUSER.DAT{8bff1468-290f-11ee-a0ec-cc4740e28e74}.TM.blf
+/NTUSER.DAT{8bff1468-290f-11ee-a0ec-cc4740e28e74}.TMContainer00000000000000000001.regtrans-ms
+/NTUSER.DAT{8bff1468-290f-11ee-a0ec-cc4740e28e74}.TMContainer00000000000000000002.regtrans-ms
+/.849C9593-D756-4E56-8D6E-42412F2A707B
+/.swt/
+/20240506_142258.jpg
+/Bootstrap-webs/
+/CV-Mandla Dyonase.txt
+/Calculator/
+/Colscast-friday.png
+/Comment-GPT-304.txt
+/Discord.lnk
+/Duplicate.txt
+/Ecommerce-Clone/
+/Elizaveta.png
+/Email.txt
+/Express-node/
+/Figma.lnk
+/GitHub Desktop.lnk
+/GitHub.lnk
+/Google Chrome.lnk
+/Grammarly.lnk
+/HACKATHONS.txt
+/HOPKER554_FTO2401_A2_Hope-Kerengera_DJS03-main/
+/Ipda.png
+/Json-App/
+/Katiso.txt
+/Loom.lnk
+/MANDYO-434-GroupB Mandla Dyonase _DJS08-main/
+/MANDYO343_WFC2401_Group_b_Mandla-Dyonase_DJS03-main-main/
+/MANDYO434-wfc2401_GroupB_Mandla-Dyonase_DJS10-main/
+/MANDYO434_WFC2401_GroupB_MandlDyonase_DJS09-main/
+/MANDYO434_WFC_Group_B-MandlaDyonase_DJS02-main/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS07-main/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_DJS11-main/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_JSL-Portfolio-piece/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_SDF06_CSS_Layout_Practice_Project06-main/
+/MANDYO434_wfc2401_GroupB_Mandla-Dyonase_SDF09_Tailwindcss_footer_project09-main/
+/MANDYO434_wfc2401_Group_B _Mandla-Dyonase_DJS04-main/
+/MANDYO434_wfc_2401_GroupB_Mandla-Dyonase_DJS05-main/
+/MANDYO434_wfc_2401_GroupB_Mandla-Dyonase_DJS06-main/
+/MANDYO434_wfc_Group_B-Mandla_Dyonase_DJS01-main/
+/Mandla Dyonase_Cover-letter.pdf
+/Mandla Dyonase_Resume.docx
+/Mandla Dyonase_Resume.pdf
+/Mandla-Dyonase_DJS11-main-main/
+/Mandla-working.js.txt
+/MandlaDyonase-GET CONNECTED IT-certificate.pdf
+/MandlaProjects/
+/Microsoft Edge.lnk
+/Music stream/
+/MyCodespace-Work/
+/New-App/
+/New-Redux/
+/New-projects/
+/Node-Express/
+/Notes/
+/Notion.lnk
+/Projects
+/React/
+/Redux-application/
+/Resources ZA Tech.txt
+/SDF_Projects/
+/Scratch - Imagine, Program, Share.lnk
+/Screenshot 2024-03-06 141815.png
+/Screenshot 2024-06-27 085736.png
+/ShopApp/
+/TAILWINDCSS/
+/Tailwind-css/
+/Tailwind-test/
+/Template/
+/Test/
+/TestButtons/
+/Trial.txt
+/Untitled-1.html
+/Visual Studio Code.lnk
+/Vite/
+/Web-commerce/
+/Zoom.lnk
+/assets/
+/bacgroudManda.avif
+/back.avif
+/code.txt
+/desktop.ini
+/expl
