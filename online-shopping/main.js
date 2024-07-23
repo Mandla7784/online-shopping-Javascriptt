@@ -29,8 +29,8 @@ async function displayAllItems(data) {
         6
       )}...</h1>
       <div class="flex space-x-2">
-        <ion-icon name="cart-outline" class="text-gray-600 hover:text-blue-600 transition-colors duration-300"></ion-icon>
-        <ion-icon name="heart-outline" class="text-gray-600 hover:text-red-600 transition-colors duration-300"></ion-icon>
+        <ion-icon class="text-gray-600 text-xl font-bold hover:text-green-600 transition-colors duration-300" name="cart-outline" class="text-gray-600 hover:text-blue-600 transition-colors duration-300"></ion-icon>
+        <ion-icon  class="text-gray-600 hover:text-red-600 transition-colors duration-300" name="heart-outline" class="text-gray-600 hover:text-red-600 transition-colors duration-300"></ion-icon>
       </div>
     </div>
     <a class="text-blue-600 hover:underline transition duration-300" href="#">Read More</a>
