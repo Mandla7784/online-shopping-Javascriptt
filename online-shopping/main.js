@@ -6,3 +6,7 @@ import URLS from "./util/urlCongiguration";
 const productContainer = document.getElementById("product-list");
 
 //function to fetchItems from API / sever side
+
+async function fetchAllItems() {
+  const data = await fetchData(URLS.baseURL);
+}
