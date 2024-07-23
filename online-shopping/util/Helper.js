@@ -12,6 +12,8 @@ async function fetchData(url) {
     console.log("Failed to fetch data from server", error);
   }
 }
+
+export default fetchData;
 /**
  * @param {string} url
  * @returns {object} data from server
