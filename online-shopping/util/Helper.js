@@ -9,6 +9,10 @@ async function fetchData(url) {
       return data;
     }
   } catch (error) {
-    console.log(error);
+    console.log("Failed to fetch data from server", error);
   }
 }
+/**
+ * @param {string} url
+ * @returns {object} data from server
+ */
