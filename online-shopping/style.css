@@ -19,5 +19,5 @@ select {
 }
 
 select:hover {
-  border-color: #3b82f6; /* Tailwind's blue-500 */
+  border-color: #59eba7; /* Tailwind's blue-500 */
 }
