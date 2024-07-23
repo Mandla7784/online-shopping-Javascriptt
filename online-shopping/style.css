@@ -21,3 +21,10 @@ select {
 select:hover {
   border-color: #59eba7; /* Tailwind's blue-500 */
 }
+
+.card {
+  @apply bg-white rounded-lg shadow-lg overflow-hidden;
+}
+.card img {
+  @apply w-full h-48 object-cover;
+}
