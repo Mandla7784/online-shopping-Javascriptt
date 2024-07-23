@@ -12,4 +12,5 @@ async function fetchAllItems() {
   console.log(data);
 }
 
-fetchAllItems();
+/// function  to render items in the DOM
+async function displayAllItems(data) {}
