@@ -12,3 +12,12 @@
     display: block;
   }
 }
+
+/* Custom styles for the select component */
+select {
+  transition: all 0.3s ease;
+}
+
+select:hover {
+  border-color: #3b82f6; /* Tailwind's blue-500 */
+}
