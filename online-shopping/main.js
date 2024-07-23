@@ -8,7 +8,7 @@ const { endpoints } = URLS; // excracting the endpoints using object desctructur
 console.log(endpoints);
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
-  const data = await fetchData(`${URLS} ${endpoints.getAllProducts}`); //fetching all items from server
+  const data = await fetchData(`${URLS.baseURL} ${endpoints.getAllProducts}`); //fetching all items from server
   console.log(data);
 }
 
