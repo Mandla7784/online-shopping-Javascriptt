@@ -5,6 +5,8 @@ import URLS from "./util/urlCongiguration";
 //delclaring and assigning vlues to dom elements
 const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
+const query = `?limit=10`;
+console.log(query);
 
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
@@ -18,17 +20,25 @@ async function displayAllItems(data) {
   const itemList = data.map((item) => {
     const { image, title } = item;
     return /*html*/ `
-          <div class="card ">
-            <img class="w-full h-48 object-cover"  src=${image}  alt=${title} />
-            <ionic-icon name="cart-outline"></ionic-icon>
-            <iconic-icon name="heart-outline"></ionic-icon>
-            <h1>${title}</h1>
-            <a class="text-slate-700 hover:text-slate-900 transition">Read More</a>
-          </div>
-        
+         <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+  <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
+  <div class="p-4">
+    <div class="flex justify-between items-center mb-4">
+      <h1 class="text-lg font-semibold text-gray-800">${title.slice(
+        0,
+        6
+      )}...</h1>
+      <div class="flex space-x-2">
+        <ion-icon name="cart-outline" class="text-gray-600 hover:text-blue-600 transition-colors duration-300"></ion-icon>
+        <ion-icon name="heart-outline" class="text-gray-600 hover:text-red-600 transition-colors duration-300"></ion-icon>
+      </div>
+    </div>
+    <a class="text-blue-600 hover:underline transition duration-300" href="#">Read More</a>
+  </div>
+</div>
         `;
   });
   productContainer.innerHTML = itemList.join("");
 }
 
-fetchAllItems();
+document.addEventListener("DOMContentLoaded", fetchAllItems);

@@ -23,7 +23,7 @@ select:hover {
 }
 
 .card {
-  @apply bg-white rounded-lg shadow-lg overflow-hidden;
+  @apply bg-white w-[200px] rounded-lg shadow-lg overflow-hidden;
 }
 .card img {
   @apply w-full h-48 object-cover;

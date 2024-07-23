@@ -15,7 +15,7 @@
     ></script>
     <style></style>
   </head>
-  <body>
+  <body class="bg-slate-100">
     <div id="app">
       <nav
         class="flex flex-wrap items-center justify-between py-4 bg-white shadow-lg px-4"
@@ -87,10 +87,13 @@
             <option value="women's clothing">Women's clothing</option>
           </select>
         </div>
-        <section id="products">
+        <h2 class="text-slate-900 text-2xl font-bold italic">
+          Get Amazing Deals Here
+        </h2>
+        <section class="p-4 flex justify-center" id="products" class="p-4">
           <div
             id="product-list"
-            class="grid grid-cols-1 md:grid-cols-3 gap-6"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center"
           ></div>
         </section>
       </main>
