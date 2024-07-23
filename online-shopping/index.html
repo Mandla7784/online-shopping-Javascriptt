@@ -73,14 +73,23 @@
           </li>
         </ul>
       </nav>
-
-      <main class="p-4 flex flex-col">
-        <h1 class="text-slate-900 text-xl font-bold">Products</h1>
-
+      <main class="p-4 flex flex-col space-y-6">
+        <h1 class="text-slate-900 text-2xl font-bold">Products</h1>
+        <div class="flex items-center justify-between">
+          <select
+            class="p-2 border rounded-md shadow-sm focus:outline-none focus:ring focus:border-blue-300"
+          >
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="jewelery">Jewelery</option>
+            <option value="men's clothing">Men's clothing</option>
+            <option value="women's clothing">Women's clothing</option>
+          </select>
+        </div>
         <section id="products">
           <div
             id="product-list"
-            class="grid grid-cols-1 md:grid-cols-3 gap-4"
+            class="grid grid-cols-1 md:grid-cols-3 gap-6"
           ></div>
         </section>
       </main>
