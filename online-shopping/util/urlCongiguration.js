@@ -11,3 +11,5 @@ const URLS = {
     deleteCartById: "/carts/{id}",
   },
 };
+
+export default URLS;
