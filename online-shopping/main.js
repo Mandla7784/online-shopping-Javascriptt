@@ -1,7 +1,7 @@
 import "./style.css";
 import fetchData from "./util/Helper";
 import URLS from "./util/urlCongiguration";
-import toRenderItemDetails from "../Components/Details";
+import toRenderItemDetails from "./Components/ItemDetails";
 console.log(toRenderItemDetails);
 //delclaring and assigning vlues to dom elements
 const productContainer = document.getElementById("product-list");
