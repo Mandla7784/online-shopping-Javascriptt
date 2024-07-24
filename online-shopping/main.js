@@ -1,7 +1,8 @@
 import "./style.css";
 import fetchData from "./util/Helper";
 import URLS from "./util/urlCongiguration";
-
+import toRenderItemDetails from "../Components/Details";
+console.log(toRenderItemDetails);
 //delclaring and assigning vlues to dom elements
 const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
@@ -76,7 +77,6 @@ function displaySearchedItems(data) {
     })
     .join("");
 }
-
 searchInput.addEventListener("input", async () => {
   const data = await fetchAllItems();
   displaySearchedItems(data); // display searched items in the dom
