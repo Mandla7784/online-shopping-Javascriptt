@@ -8,7 +8,6 @@ const { endpoints } = URLS; // excracting the endpoints using object desctructur
 const query = `?limit=10`;
 console.log(query);
 const searchInput = document.getElementById("search");
-console.log(searchInput);
 
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
@@ -43,6 +42,16 @@ async function displayAllItems(data) {
   productContainer.innerHTML = itemList.join("");
 }
 
-function displaySearchedItems(data) {}
+function displaySearchedItems() {
+  const searchedItems = searchInput.value;
+  console.log(searchedItems);
+}
 
 document.addEventListener("DOMContentLoaded", fetchAllItems);
+
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", () => {
+  //checking if my input value is consoled
+  displaySearchedItems();
+});
