@@ -7,6 +7,8 @@ const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
 const query = `?limit=10`;
 console.log(query);
+const searchInput = document.getElementById("search");
+console.log(searchInput);
 
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
@@ -40,5 +42,7 @@ async function displayAllItems(data) {
   });
   productContainer.innerHTML = itemList.join("");
 }
+
+function displaySearchedItems(data) {}
 
 document.addEventListener("DOMContentLoaded", fetchAllItems);
