@@ -9,7 +9,6 @@ function itemsDetails(item) {
   return /*html*/ `
 
 
-
 <div class="w-full md:w-1/2 p-6 flex flex-col flex-grow flex-shrink">
   <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow-lg">
     <a href="#" class="flex flex-wrap no-underline hover:no-underline">
@@ -31,6 +30,7 @@ function itemsDetails(item) {
     </a>
   </div>
 </div>
+
 
 `;
 }
