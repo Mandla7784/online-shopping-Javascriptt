@@ -40,7 +40,7 @@ async function displayAllItems(data) {
         `;
   });
 
-  displaySearchedItems(products_searched);
+  productContainer.innerHTML = itemList.join("");
 }
 
 function displaySearchedItems(data) {
@@ -57,4 +57,8 @@ function displaySearchedItems(data) {
 const btn = document.querySelector("button");
 btn.addEventListener("click", () => {
   fetchAllItems();
+});
+
+searchInput.addEventListener("input", async () => {
+  const data = await fetchAllItems();
 });
