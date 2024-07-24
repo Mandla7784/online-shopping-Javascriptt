@@ -6,7 +6,7 @@ import URLS from "./util/urlCongiguration";
 const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
 const query = `?limit=10`;
-console.log(query);
+
 const searchInput = document.getElementById("search");
 
 //function to fetchItems from API / sever side
@@ -39,19 +39,22 @@ async function displayAllItems(data) {
 </div>
         `;
   });
-  productContainer.innerHTML = itemList.join("");
+
+  displaySearchedItems(products_searched);
 }
 
-function displaySearchedItems() {
-  const searchedItems = searchInput.value;
-  console.log(searchedItems);
-}
+function displaySearchedItems(data) {
+  const searched = searchInput.value;
+  const products_searched = data;
 
-document.addEventListener("DOMContentLoaded", fetchAllItems);
+  const searchedItems = products_searched.filter((item) => {
+    return item.title.toLowerCase().includes(searched.toLowerCase());
+  });
+
+  productContainer.innerHTML = searchedItems.join("");
+}
 
 const btn = document.querySelector("button");
-
 btn.addEventListener("click", () => {
-  //checking if my input value is consoled
-  displaySearchedItems();
+  fetchAllItems();
 });
