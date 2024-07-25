@@ -6,7 +6,7 @@ import URLS from "./util/urlCongiguration";
 const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
 const searchInput = document.getElementById("search");
-
+const mainTitle = document.getElementById("title");
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
   const data = await fetchData(`${URLS.baseURL}${endpoints.getAllProducts}`); //fetching all items from server
@@ -84,7 +84,6 @@ function displaySearchedItems(data) {
              </div>
            </div>
            <a
-
              class="text-blue-600 hover:underline transition duration-300"
              href="#"
            >
@@ -105,6 +104,9 @@ searchInput.addEventListener("input", async () => {
 
 //function to show details of item on click
 function showingDetails(id) {
+  //this function will be called on click of the card and change html content loading a new content dynamically
+  mainTitle.innerHTML = "Product Details";
+  productContainer.innerHTML = "";
   console.log(`showing deatils for item with id ${id}`);
 }
 
