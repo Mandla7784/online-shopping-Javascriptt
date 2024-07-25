@@ -1,8 +1,7 @@
 import "./style.css";
 import fetchData from "./util/Helper";
 import URLS from "./util/urlCongiguration";
-import itemsDetails from "./Components/ItemDetails";
-console.log(itemsDetails);
+
 //delclaring and assigning vlues to dom elements
 const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
@@ -24,8 +23,8 @@ async function displayAllItems(data) {
   const itemList = data.map((item) => {
     const { image, title } = item;
     return /*html*/ `
-
-<button onClick="itemsDetails(${item.id})" >
+ <!-- TESTING -->
+<button onClick="showingDetails(${item.id})" >
   <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
   <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
   <div class="p-4">
@@ -106,6 +105,12 @@ searchInput.addEventListener("input", async () => {
   const data = await fetchAllItems();
   displaySearchedItems(data); // display searched items in the dom
 });
+
+function showingDetails(id) {
+  console.log(`showing deatils for item with id ${id}`);
+}
+
+window.showingDetails = showingDetails;
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllItems(); // when the page loads it will fetch all items
