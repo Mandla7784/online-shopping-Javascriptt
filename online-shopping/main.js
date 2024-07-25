@@ -116,20 +116,19 @@ async function showingDetails(id) {
   categoryLabelEl.classList.add("font-bold");
 
   productContainer.innerHTML = `
-       <div class="flex gap-7">
-      
+  <div class="product-container flex gap-8 p-4 border rounded-lg shadow-lg bg-white">
+    <img src="${item.image}" alt="${item.title}" class="w-32 h-32 object-cover rounded-md" />
     
-       <img src=${item.image} />
-       
- 
-      <div class="description flex flex-col gap-5 w-full">
-        <h2>${item.title}</h2>
-      </div>
-       </div>
-    
-    `;
+    <div class="description flex flex-col justify-between w-full">
+      <h2 class="text-lg font-semibold mb-2">${item.title}</h2>
+      <div class="price text-xl font-bold text-green-600 mb-2">$${item.price}</div>
+      <button class="add-to-cart bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+`;
 }
-
 window.showingDetails = showingDetails; // attaching the function to the window object to be accessible from the browser
 
 document.addEventListener("DOMContentLoaded", () => {
