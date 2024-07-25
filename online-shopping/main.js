@@ -108,7 +108,6 @@ searchInput.addEventListener("input", async () => {
 //function to show details of item on click
 async function showingDetails(id) {
   //this function will be called on click of the card and change html content loading a new content dynamically
-
   const spanEl = document.getElementById("category-all");
   spanEl.hidden = true;
   const item = await fetchData(`https://fakestoreapi.com/products/${id}`);
