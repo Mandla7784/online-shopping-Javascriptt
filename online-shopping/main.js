@@ -8,7 +8,10 @@ const { endpoints } = URLS; // excracting the endpoints using object desctructur
 const searchInput = document.getElementById("search");
 const mainTitle = document.getElementById("title");
 const categoryLabelEl = document.getElementById("label-category");
-
+mainTitle.innerHTML = "Product Details";
+const goBackToProducts = document.createElement("button");
+goBackToProducts.textContent = "Back to Products";
+goBackToProducts.href = "#";
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
   const data = await fetchData(`${URLS.baseURL}${endpoints.getAllProducts}`); //fetching all items from server
@@ -45,10 +48,8 @@ async function displayAllItems(data) {
  
         `;
   });
-
   productContainer.innerHTML = itemList.join(""); // rendering the items in the DOM
 }
-
 function displaySearchedItems(data) {
   const searched = searchInput.value; // getting the value of search input
 
@@ -107,14 +108,26 @@ searchInput.addEventListener("input", async () => {
 //function to show details of item on click
 async function showingDetails(id) {
   //this function will be called on click of the card and change html content loading a new content dynamically
-  mainTitle.innerHTML = "Product Details";
+
   const spanEl = document.getElementById("category-all");
   spanEl.hidden = true;
   const item = await fetchData(`https://fakestoreapi.com/products/${id}`);
   categoryLabelEl.innerText += `${item.category}`;
   categoryLabelEl.classList.add("font-bold");
 
-  productContainer.innerHTML = `${item.id}`;
+  productContainer.innerHTML = `
+       <div class="flex gap-7">
+      
+    
+       <img src=${item.image} />
+       
+ 
+      <div class="description flex flex-col gap-5 w-full">
+        <h2>${item.title}</h2>
+      </div>
+       </div>
+    
+    `;
 }
 
 window.showingDetails = showingDetails; // attaching the function to the window object to be accessible from the browser
