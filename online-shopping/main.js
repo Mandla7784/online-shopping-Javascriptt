@@ -5,8 +5,6 @@ import URLS from "./util/urlCongiguration";
 //delclaring and assigning vlues to dom elements
 const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
-const query = `?limit=10`;
-
 const searchInput = document.getElementById("search");
 
 //function to fetchItems from API / sever side
@@ -20,10 +18,10 @@ async function fetchAllItems() {
 /// function  to render items in the DOM
 async function displayAllItems(data) {
   //maping through the data list and render as a card
-  const itemList = data.map((item) => {
+  const itemList = await data.map((item) => {
     const { image, title } = item;
     return /*html*/ `
- <!-- TESTING -->
+ <!-- TESTING  -->
 <button onClick="showingDetails(${item.id})" >
   <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
   <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
@@ -105,11 +103,12 @@ searchInput.addEventListener("input", async () => {
   displaySearchedItems(data); // display searched items in the dom
 });
 
+//function to show details of item on click
 function showingDetails(id) {
   console.log(`showing deatils for item with id ${id}`);
 }
 
-window.showingDetails = showingDetails;
+window.showingDetails = showingDetails; // attaching the function to the window object to be accessible from the browser
 
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllItems(); // when the page loads it will fetch all items
