@@ -8,7 +8,7 @@ const { endpoints } = URLS; // excracting the endpoints using object desctructur
 const searchInput = document.getElementById("search");
 const mainTitle = document.getElementById("title");
 const categoryLabelEl = document.getElementById("label-category");
-mainTitle.innerHTML = "Product Details";
+
 const goBackToProducts = document.createElement("button");
 goBackToProducts.textContent = "Back to Products";
 goBackToProducts.href = "#";
@@ -114,8 +114,8 @@ async function showingDetails(id) {
   const item = await fetchData(`https://fakestoreapi.com/products/${id}`);
   categoryLabelEl.innerText += `${item.category}`;
   categoryLabelEl.classList.add("font-bold");
-
-  productContainer.innerHTML = `
+  mainTitle.innerHTML = "Product Details";
+  productContainer.innerHTML = /*html*/ `
   <div class="product-container flex gap-8 p-4 border rounded-lg shadow-lg bg-white">
     <img src="${item.image}" alt="${item.title}" class="w-32 h-32 object-cover rounded-md" />
     
