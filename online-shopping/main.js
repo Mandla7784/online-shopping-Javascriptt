@@ -7,6 +7,8 @@ const productContainer = document.getElementById("product-list");
 const { endpoints } = URLS; // excracting the endpoints using object desctructuring
 const searchInput = document.getElementById("search");
 const mainTitle = document.getElementById("title");
+const categoryLabelEl = document.getElementById("label-category");
+
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
   const data = await fetchData(`${URLS.baseURL}${endpoints.getAllProducts}`); //fetching all items from server
@@ -103,11 +105,16 @@ searchInput.addEventListener("input", async () => {
 });
 
 //function to show details of item on click
-function showingDetails(id) {
+async function showingDetails(id) {
   //this function will be called on click of the card and change html content loading a new content dynamically
   mainTitle.innerHTML = "Product Details";
-  productContainer.innerHTML = "";
-  console.log(`showing deatils for item with id ${id}`);
+  const spanEl = document.getElementById("category-all");
+  spanEl.hidden = true;
+  const item = await fetchData(`https://fakestoreapi.com/products/${id}`);
+  categoryLabelEl.innerText += `${item.category}`;
+  categoryLabelEl.classList.add("font-bold");
+
+  productContainer.innerHTML = `${item.id}`;
 }
 
 window.showingDetails = showingDetails; // attaching the function to the window object to be accessible from the browser
