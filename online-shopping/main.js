@@ -24,10 +24,9 @@ async function displayAllItems(data) {
   const itemList = data.map((item) => {
     const { image, title } = item;
     return /*html*/ `
-    <a  onClick="itemsDetails(${
-      item.id
-    })"  href="./Components/ItemDetails.html?id=${item.id}">
-               <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+
+<button onClick="itemsDetails(${item.id})" >
+  <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
   <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
   <div class="p-4">
     <div class="flex justify-between items-center mb-4">
@@ -43,7 +42,8 @@ async function displayAllItems(data) {
     <a class="text-blue-600 hover:underline transition duration-300" href="#">Read More</a>
   </div>
 </div>
-    </a>
+</button>
+ 
         `;
   });
 
