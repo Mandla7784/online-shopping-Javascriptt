@@ -98,7 +98,6 @@ function displaySearchedItems(data) {
      </a>;
      `;
     })
-
     .join("");
 }
 searchInput.addEventListener("input", async () => {
