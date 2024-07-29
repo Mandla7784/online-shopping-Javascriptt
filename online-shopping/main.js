@@ -146,3 +146,10 @@ window.showingDetails = showingDetails; // attaching the function to the window 
 document.addEventListener("DOMContentLoaded", () => {
   fetchAllItems(); // when the page loads it will fetch all items
 });
+
+///declaring a Cart counter
+let my_cart = document.getElementById("cart-count");
+my_cart.textContent = 25;
+function addingItemsToCart(id) {
+  console.log("Item added to Cart");
+}
