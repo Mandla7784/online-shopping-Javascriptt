@@ -1,155 +1,132 @@
 import "./style.css";
 import fetchData from "./util/Helper";
-import URLS from "./util/urlCongiguration";
+import URLS from "./util/urlCongiguration.js";
 
-//delclaring and assigning vlues to dom elements
+// Declaring and assigning values to DOM elements
 const productContainer = document.getElementById("product-list");
-const { endpoints } = URLS; // excracting the endpoints using object desctructuring
+const { endpoints } = URLS; // Extracting the endpoints using object destructuring
 const searchInput = document.getElementById("search");
 const mainTitle = document.getElementById("title");
 const categoryLabelEl = document.getElementById("label-category");
 const goBackLink = document.getElementById("go-back");
 
-//function to fetchItems from API / sever side
+// Function to fetch items from API/server side
 async function fetchAllItems() {
-  const data = await fetchData(`${URLS.baseURL}${endpoints.getAllProducts}`); //fetching all items from server
-  //invoking the display function
-  displayAllItems(data);
-  return data; // return data to use it later for search
+  const data = await fetchData(`${URLS.baseURL}${endpoints.getAllProducts}`); // Fetching all items from server
+  displayAllItems(data); // Invoking the display function
+  return data; // Return data to use it later for search
 }
 
-/// function  to render items in the DOM
+// Function to render items in the DOM
 async function displayAllItems(data) {
-  //maping through the data list and render as a card
-  const itemList = await data.map((item) => {
+  const itemList = data.map((item) => {
     if (item) {
       const { image, title } = item;
       return /*html*/ `
- <!-- TESTING  -->
-<button onClick="showingDetails(${item.id})" >
-  <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-  <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
-  <div class="p-4">
-    <div class="flex justify-between items-center mb-4">
-      <h1 class="text-lg font-semibold text-gray-800">${title.slice(
-        0,
-        6
-      )}...</h1>
-      <div class="flex space-x-2">
-        <ion-icon  class="text-gray-600 text-xl font-bold hover:text-green-600 transition-colors duration-300" name="cart-outline" class="text-gray-600 hover:text-blue-600 transition-colors duration-300"></ion-icon>
-        <ion-icon  class="text-gray-600 hover:text-red-600 transition-colors duration-300" name="heart-outline" class="text-gray-600 hover:text-red-600 transition-colors duration-300"></ion-icon>
-      </div>
-    </div>
-    <a class="text-blue-600 hover:underline transition duration-300" href="#">Read More</a>
-  </div>
-</div>
-</button>
-    `;
+        <button onClick="showingDetails(${item.id})">
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-4">
+                <h1 class="text-lg font-semibold text-gray-800">${title.slice(
+                  0,
+                  6
+                )}...</h1>
+                <div class="flex space-x-2">
+                  <ion-icon class="text-gray-600 text-xl font-bold hover:text-green-600 transition-colors duration-300" name="cart-outline"></ion-icon>
+                  <ion-icon class="text-gray-600 hover:text-red-600 transition-colors duration-300" name="heart-outline"></ion-icon>
+                </div>
+              </div>
+              <a class="text-blue-600 hover:underline transition duration-300" href="#">Read More</a>
+            </div>
+          </div>
+        </button>
+      `;
     } else {
-      const productMessage = document.createElement("p");
-      productMessage.innerText = "No product found";
-      productMessage.classList.add("text-center", "text-gray-500", "p-4");
-      document.body.append(productMessage);
+      return `<p class="text-center text-gray-500 p-4">No product found</p>`;
     }
   });
 
-  productContainer.innerHTML = itemList.join(""); // rendering the items in the DOM
+  productContainer.innerHTML = itemList.join(""); // Rendering the items in the DOM
 }
+
+// Function to display searched items
 function displaySearchedItems(data) {
-  const searched = searchInput.value; // getting the value of search input
+  const searched = searchInput.value; // Getting the value of search input
 
-  const searchedItems = data.filter((item) => {
-    return item.title.toLowerCase().includes(searched.toLowerCase()); // filtering the searched items based on their title
-  });
+  const searchedItems = data.filter((item) =>
+    item.title.toLowerCase().includes(searched.toLowerCase())
+  );
 
-  productContainer.innerHTML = searchedItems // rendering the searched items in the DOM
+  productContainer.innerHTML = searchedItems
     .map((item) => {
       if (item) {
-        const { image, title } = item; // extracting image and title from the item
-
+        const { image, title } = item;
         return /*html*/ `
-    
-       <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-         <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
-         <div class="p-4">
-           <div class="flex justify-between items-center mb-4">
-             <h1 class="text-lg font-semibold text-gray-800">
-               ${title.slice(0, 6)}...
-             </h1>
-             <div class="flex space-x-2">
-               <ion-icon
-                 class="text-gray-600 text-xl font-bold hover:text-green-600 transition-colors duration-300"
-                 name="cart-outline"
-                 class="text-gray-600 hover:text-blue-600 transition-colors duration-300"
-               ></ion-icon>
-               <ion-icon
-                 class="text-gray-600 hover:text-red-600 transition-colors duration-300"
-                 name="heart-outline"
-                 class="text-gray-600 hover:text-red-600 transition-colors duration-300"
-               ></ion-icon>
-             </div>
-           </div>
-           <a
-             class="text-blue-600 hover:underline transition duration-300"
-             href="#"
-           >
-             Read More
-           </a>
-   
-         </div>
-       </div>
-     </a>;
-     `;
+          <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+            <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
+            <div class="p-4">
+              <div class="flex justify-between items-center mb-4">
+                <h1 class="text-lg font-semibold text-gray-800">${title.slice(
+                  0,
+                  6
+                )}...</h1>
+                <div class="flex space-x-2">
+                  <ion-icon class="text-gray-600 text-xl font-bold hover:text-green-600 transition-colors duration-300" name="cart-outline"></ion-icon>
+                  <ion-icon class="text-gray-600 hover:text-red-600 transition-colors duration-300" name="heart-outline"></ion-icon>
+                </div>
+              </div>
+              <a class="text-blue-600 hover:underline transition duration-300" href="#">Read More</a>
+            </div>
+          </div>
+        `;
       } else {
-        const productMessage = document.createElement("p");
-        productMessage.innerText = "No product found";
-        productMessage.classList.add("text-center", "text-gray-500", "p-4");
-        document.body.append(productMessage);
+        return `<p class="text-center text-gray-500 p-4">No product found</p>`;
       }
     })
-    .join("");
+    .join(""); // Rendering the searched items in the DOM
 }
 
 searchInput.addEventListener("input", async () => {
   const data = await fetchAllItems();
-  displaySearchedItems(data); // display searched items in the dom
+  displaySearchedItems(data); // Display searched items in the DOM
 });
 
-//function to show details of item on click
+// Function to show details of item on click
 async function showingDetails(id) {
-  //this function will be called on click of the card and change html content loading a new content dynamically
   const spanEl = document.getElementById("category-all");
   spanEl.hidden = true;
   const item = await fetchData(`https://fakestoreapi.com/products/${id}`);
-  categoryLabelEl.innerText += `${item.category}`;
+  categoryLabelEl.innerText = `${item.category}`; // Fixed: Added assignment instead of concatenation
   categoryLabelEl.classList.add("font-bold");
   mainTitle.innerHTML = "Product Details";
   goBackLink.classList.remove("hidden");
   goBackLink.innerHTML = "Back to Products";
 
   productContainer.innerHTML = /*html*/ `
-  <div class="product-container flex gap-8 p-4 border rounded-lg shadow-lg bg-white">
-    <img src="${item.image}" alt="${item.title}" class="w-32 h-32 object-cover rounded-md" />
-    
-    <div class="description flex flex-col justify-between w-full">
-      <h2 class="text-lg font-semibold mb-2">${item.title}</h2>
-      <div class="price text-xl font-bold text-green-600 mb-2">$${item.price}</div>
-      <button class="add-to-cart bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
-        Add to Cart
-      </button>
+    <div class="product-container flex gap-8 p-4 border rounded-lg shadow-lg bg-white">
+      <img src="${item.image}" alt="${item.title}" class="w-32 h-32 object-cover rounded-md" />
+      <div class="description flex flex-col justify-between w-full">
+        <h2 class="text-lg font-semibold mb-2">${item.title}</h2>
+        <div class="price text-xl font-bold text-green-600 mb-2">$${item.price}</div>
+        <button onClick="addingItemsToCart()" class="add-to-cart bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          Add to Cart
+        </button>
+      </div>
     </div>
-  </div>
-`;
+  `;
 }
-window.showingDetails = showingDetails; // attaching the function to the window object to be accessible from the browser
+
+window.showingDetails = showingDetails;
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetchAllItems(); // when the page loads it will fetch all items
+  fetchAllItems(); // When the page loads it will fetch all items
 });
 
-///declaring a Cart counter
+// Declaring a Cart counter
 let my_cart = document.getElementById("cart-count");
-my_cart.textContent = 25;
-function addingItemsToCart(id) {
-  console.log("Item added to Cart");
-}
+my_cart.textContent = 0; // Initial items zero items in local storage
+
+window.addingItemsToCart = function addingItemsToCart() {
+  my_cart.textContent = Number(my_cart.textContent) + 1;
+};
