@@ -22,8 +22,9 @@ async function fetchAllItems() {
 async function displayAllItems(data) {
   //maping through the data list and render as a card
   const itemList = await data.map((item) => {
-    const { image, title } = item;
-    return /*html*/ `
+    if (item) {
+      const { image, title } = item;
+      return /*html*/ `
  <!-- TESTING  -->
 <button onClick="showingDetails(${item.id})" >
   <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -43,9 +44,15 @@ async function displayAllItems(data) {
   </div>
 </div>
 </button>
- 
-        `;
+    `;
+    } else {
+      const productMessage = document.createElement("p");
+      productMessage.innerText = "No product found";
+      productMessage.classList.add("text-center", "text-gray-500", "p-4");
+      document.body.append(productMessage);
+    }
   });
+
   productContainer.innerHTML = itemList.join(""); // rendering the items in the DOM
 }
 function displaySearchedItems(data) {
@@ -57,9 +64,10 @@ function displaySearchedItems(data) {
 
   productContainer.innerHTML = searchedItems // rendering the searched items in the DOM
     .map((item) => {
-      const { image, title } = item; // extracting image and title from the item
+      if (item) {
+        const { image, title } = item; // extracting image and title from the item
 
-      return /*html*/ `
+        return /*html*/ `
     
        <div class="card bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
          <img class="w-full h-48 object-cover" src="${image}" alt="${title}" />
@@ -92,9 +100,16 @@ function displaySearchedItems(data) {
        </div>
      </a>;
      `;
+      } else {
+        const productMessage = document.createElement("p");
+        productMessage.innerText = "No product found";
+        productMessage.classList.add("text-center", "text-gray-500", "p-4");
+        document.body.append(productMessage);
+      }
     })
     .join("");
 }
+
 searchInput.addEventListener("input", async () => {
   const data = await fetchAllItems();
   displaySearchedItems(data); // display searched items in the dom
