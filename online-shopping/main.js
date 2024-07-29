@@ -109,6 +109,8 @@ async function showingDetails(id) {
   categoryLabelEl.innerText += `${item.category}`;
   categoryLabelEl.classList.add("font-bold");
   mainTitle.innerHTML = "Product Details";
+  goBackLink.classList.remove("hidden");
+  goBackLink.innerHTML = "Back to Products";
 
   productContainer.innerHTML = /*html*/ `
   <div class="product-container flex gap-8 p-4 border rounded-lg shadow-lg bg-white">
