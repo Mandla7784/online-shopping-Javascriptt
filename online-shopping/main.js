@@ -130,6 +130,6 @@ let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 window.addingItemsToCart = function addingItemsToCart(id) {
   my_cart.textContent = Number(my_cart.textContent) + 1;
-  cartItems.push(id);
-  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  cartItems.push(id); // pushing a licked item to cartList stringified to local storage
+  localStorage.setItem("cartItems", JSON.stringify(cartItems)); //setting cart items to database when add to cart button clicked
 };
