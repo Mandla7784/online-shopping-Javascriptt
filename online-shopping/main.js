@@ -8,10 +8,8 @@ const { endpoints } = URLS; // excracting the endpoints using object desctructur
 const searchInput = document.getElementById("search");
 const mainTitle = document.getElementById("title");
 const categoryLabelEl = document.getElementById("label-category");
+const goBackLink = document.getElementById("go-back");
 
-const goBackToProducts = document.createElement("button");
-goBackToProducts.textContent = "Back to Products";
-goBackToProducts.href = "#";
 //function to fetchItems from API / sever side
 async function fetchAllItems() {
   const data = await fetchData(`${URLS.baseURL}${endpoints.getAllProducts}`); //fetching all items from server
@@ -111,6 +109,7 @@ async function showingDetails(id) {
   categoryLabelEl.innerText += `${item.category}`;
   categoryLabelEl.classList.add("font-bold");
   mainTitle.innerHTML = "Product Details";
+
   productContainer.innerHTML = /*html*/ `
   <div class="product-container flex gap-8 p-4 border rounded-lg shadow-lg bg-white">
     <img src="${item.image}" alt="${item.title}" class="w-32 h-32 object-cover rounded-md" />
