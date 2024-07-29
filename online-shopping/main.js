@@ -109,7 +109,7 @@ async function showingDetails(id) {
       <div class="description flex flex-col justify-between w-full">
         <h2 class="text-lg font-semibold mb-2">${item.title}</h2>
         <div class="price text-xl font-bold text-green-600 mb-2">$${item.price}</div>
-        <button onClick="addingItemsToCart()" class="add-to-cart bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+        <button onClick="addingItemsToCart(${item.id})" class="add-to-cart bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
           Add to Cart
         </button>
       </div>
@@ -127,6 +127,9 @@ document.addEventListener("DOMContentLoaded", () => {
 let my_cart = document.getElementById("cart-count");
 my_cart.textContent = 0; // Initial items zero items in local storage
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
 window.addingItemsToCart = function addingItemsToCart(id) {
   my_cart.textContent = Number(my_cart.textContent) + 1;
+  cartItems.push(id);
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
 };
