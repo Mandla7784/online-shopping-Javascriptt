@@ -124,12 +124,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Declaring a Cart counter
-let my_cart = document.getElementById("cart-count");
-my_cart.textContent = 0; // Initial items zero items in local storage
+let my_cart_counter = document.getElementById("cart-count");
+my_cart_counter.textContent = 0; // Initial items zero items in local storage
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 window.addingItemsToCart = function addingItemsToCart(id) {
-  my_cart.textContent = Number(my_cart.textContent) + 1;
+  my_cart_counter.textContent = Number(my_cart_counter.textContent) + 1;
   cartItems.push(id); // pushing a licked item to cartList stringified to local storage
   localStorage.setItem("cartItems", JSON.stringify(cartItems)); //setting cart items to database when add to cart button clicked
 };
+
+const myCart = document.getElementById("my-cart");
+const overlay_cart = document.querySelector(".overlay");
+console.log(overlay_cart);
+function closeCart() {}
+function openCart() {
+  //when user clicks on mycart it will open the cart page to view cart Items
+}
