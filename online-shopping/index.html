@@ -109,11 +109,14 @@
             class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center"
           ></div>
         </section>
-        <div class="overlay bg-[rgba(0,0,0,0.5)] fixed inset-0 z-40 hidden">
+        <div
+          class="hidden md:hidden overlay bg-[rgba(0,0,0,0.5)] fixed inset-0 z-40"
+        >
           <section
             class="cart-section fixed top-0 right-0 h-full w-80 bg-white shadow-lg p-4"
           >
             <button
+              id="btn-close-cart"
               class="close-button absolute top-4 right-4 bg-slate-900 text-white font-bold py-2 px-4 rounded-full hover:bg-slate-600 transition"
             >
               <ion-icon name="close-outline"></ion-icon>

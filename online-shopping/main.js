@@ -136,8 +136,13 @@ window.addingItemsToCart = function addingItemsToCart(id) {
 
 const myCart = document.getElementById("my-cart");
 const overlay_cart = document.querySelector(".overlay");
-console.log(overlay_cart);
+const closeCartButton = document.querySelector("#btn-close-cart");
+
 function closeCart() {}
 function openCart() {
   //when user clicks on mycart it will open the cart page to view cart Items
+  myCart.addEventListener("click", function () {
+    overlay_cart.classList.remove("md:hidden");
+  });
 }
+openCart();
