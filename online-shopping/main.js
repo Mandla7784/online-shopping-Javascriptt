@@ -125,9 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Declaring a Cart counter
 let my_cart_counter = document.getElementById("cart-count");
-my_cart_counter.textContent =
-  localStorage.getItem("cart-count", JSON.parse(my_cart_counter.textContent)) ||
-  0; // Initial items zero items in local storage
+my_cart_counter.textContent = localStorage.getItem("cart-count") || 0; // Initial items zero items in local storage
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
 window.addingItemsToCart = function addingItemsToCart(id) {
