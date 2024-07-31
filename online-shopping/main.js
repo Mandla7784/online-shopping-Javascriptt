@@ -138,7 +138,11 @@ const myCart = document.getElementById("my-cart");
 const overlay_cart = document.querySelector(".overlay");
 const closeCartButton = document.querySelector("#btn-close-cart");
 
-function closeCart() {}
+function closeCart() {
+  closeCartButton.addEventListener("click", function () {
+    overlay_cart.classList.add("md:hidden");
+  });
+}
 function openCart() {
   //when user clicks on mycart it will open the cart page to view cart Items
   myCart.addEventListener("click", function () {
@@ -146,3 +150,4 @@ function openCart() {
   });
 }
 openCart();
+closeCart();
