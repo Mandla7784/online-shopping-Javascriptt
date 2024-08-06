@@ -140,7 +140,12 @@ window.addingItemsToCart = function addingItemsToCart(id) {
   );
 };
 // displaying items from cart
-
+const cartItems_displayed = document.getElementById("cart-items");
+function displayCartItems() {
+  const cart_item_list = JSON.parse(localStorage.getItem("cartItems")) || [];
+  console.log(cart_item_list);
+}
+displayCartItems();
 const myCart = document.getElementById("my-cart");
 const overlay_cart = document.querySelector(".overlay");
 const closeCartButton = document.querySelector("#btn-close-cart");
