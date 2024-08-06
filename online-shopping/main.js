@@ -141,9 +141,16 @@ window.addingItemsToCart = function addingItemsToCart(id) {
 };
 // displaying items from cart
 const cartItems_displayed = document.getElementById("cart-items");
-function displayCartItems() {
+async function displayCartItems() {
   const cart_item_list = JSON.parse(localStorage.getItem("cartItems")) || [];
-  console.log(cart_item_list);
+
+  cart_item_list.map(async (i) => {
+    console.log(i);
+    const item_from_cart = await fetchData(
+      `https://fakestoreapi.com/products/${i}`
+    );
+    console.log(item_from_cart);
+  });
 }
 displayCartItems();
 const myCart = document.getElementById("my-cart");
