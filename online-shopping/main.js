@@ -129,6 +129,7 @@ my_cart_counter.textContent =
   JSON.parse(localStorage.getItem("cart-count")) || 0; // Initial items zero items in local storage
 let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+// adding items to cart
 window.addingItemsToCart = function addingItemsToCart(id) {
   my_cart_counter.textContent = Number(my_cart_counter.textContent) + 1;
   cartItems.push(id); // pushing a licked item to cartList stringified to local storage
@@ -138,6 +139,7 @@ window.addingItemsToCart = function addingItemsToCart(id) {
     JSON.stringify(my_cart_counter.textContent)
   );
 };
+// displaying items from cart
 
 const myCart = document.getElementById("my-cart");
 const overlay_cart = document.querySelector(".overlay");
